@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { cn } from "../lib/utils";
 
 export const MaskContainer = ({
@@ -19,13 +19,13 @@ export const MaskContainer = ({
   };
 
   useEffect(() => {
-    containerRef.current.addEventListener("mousemove", updateMousePosition);
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("mousemove", updateMousePosition);
+    }
     return () => {
-      if (containerRef.current) {
-        containerRef.current.removeEventListener(
-          "mousemove",
-          updateMousePosition,
-        );
+      if (container) {
+        container.removeEventListener("mousemove", updateMousePosition);
       }
     };
   }, []);
@@ -43,7 +43,7 @@ export const MaskContainer = ({
       }}
     >
       <motion.div
-        className="absolute flex h-full w-full items-center justify-center bg-black text-6xl text-white [mask-image:url(/mask.svg)] [mask-repeat:no-repeat] [mask-size:40px]"
+        className="absolute flex h-full w-full items-center justify-center bg-black text-6xl [mask-image:url(/mask.svg)] [mask-repeat:no-repeat] [mask-size:40px] dark:bg-white"
         animate={{
           maskPosition: `${mousePosition.x - maskSize / 2}px ${
             mousePosition.y - maskSize / 2
@@ -52,10 +52,10 @@ export const MaskContainer = ({
         }}
         transition={{
           maskSize: { duration: 0.3, ease: "easeInOut" },
-          maskPosition: { duration: 0, ease: "linear" },
+          maskPosition: { duration: 0.15, ease: "linear" },
         }}
       >
-        <div className="absolute inset-0 z-0 h-full w-full bg-black opacity-50" />
+        <div className="absolute inset-0 z-0 h-full w-full bg-black opacity-50 dark:bg-white" />
         <div
           onMouseEnter={() => {
             setIsHovered(true);
@@ -63,15 +63,16 @@ export const MaskContainer = ({
           onMouseLeave={() => {
             setIsHovered(false);
           }}
-          className="relative z-20 mx-auto max-w-4xl text-center text-4xl font-bold text-white"
+          className="relative z-20 mx-auto max-w-4xl text-center text-4xl font-bold"
         >
           {children}
         </div>
       </motion.div>
 
-      <div className="flex h-full w-full items-center justify-center text-slate-800">
+      <div className="flex h-full w-full items-center justify-center">
         {revealText}
       </div>
     </motion.div>
   );
 };
+
