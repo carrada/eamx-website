@@ -5,7 +5,7 @@ export default function Home() {
     <main className="h-screen w-full overflow-hidden">
       <MaskContainer
         revealText={
-          <p className="mx-auto max-w-4xl text-center text-4xl font-bold text-slate-800 dark:text-white">
+          <p className="w-full text-center text-4xl font-bold text-slate-800 dark:text-white">
             Bienvenido a EAMX. Donde la innovación se encuentra con la excelencia. 
             Descubre todo lo que podemos hacer por ti.
           </p>
