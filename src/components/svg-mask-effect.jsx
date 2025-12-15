@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+"use client";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../lib/utils";
 
@@ -11,35 +12,66 @@ export const MaskContainer = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: null, y: null });
-
+  const containerRef = useRef(null);
+  
   const updateMousePosition = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
+    const rect = containerRef.current.getBoundingClientRect();
     setMousePosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
+  useEffect(() => {
+    containerRef.current.addEventListener("mousemove", updateMousePosition);
+    return () => {
+      if (containerRef.current) {
+        containerRef.current.removeEventListener(
+          "mousemove",
+          updateMousePosition
+        );
+      }
+    };
+  }, []);
+  
+  let maskSize = isHovered ? revealSize : size;
+
   return (
     <motion.div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onMouseMove={updateMousePosition}
-      className={cn("relative h-screen flex items-center justify-center", className)}
+      ref={containerRef}
+      className={cn("relative h-screen", className)}
+      animate={{
+        backgroundColor: isHovered ? "var(--slate-900)" : "var(--white)",
+      }}
+      transition={{
+        backgroundColor: { duration: 0.3 },
+      }}
     >
       <motion.div
-        className="w-full h-full flex items-center justify-center text-6xl font-bold text-slate-400"
+        className="absolute flex h-full w-full items-center justify-center bg-black text-6xl [mask-image:url(/mask.svg)] [mask-repeat:no-repeat] [mask-size:40px] dark:bg-white"
         animate={{
-          WebkitMaskImage: isHovered
-            ? `radial-gradient(${revealSize}px circle at ${mousePosition.x}px ${mousePosition.y}px, black 40%, transparent 100%)`
-            : "none",
-          WebkitMaskSize: "100%",
+          maskPosition: `${mousePosition.x - maskSize / 2}px ${
+            mousePosition.y - maskSize / 2
+          }px`,
+          maskSize: `${maskSize}px`,
         }}
-        transition={{ type: "tween", ease: "backOut", duration: 0.1 }}
+        transition={{
+          maskSize: { duration: 0.3, ease: "easeInOut" },
+          maskPosition: { duration: 0.15, ease: "linear" },
+        }}
       >
-        <div className="absolute inset-0 z-0 h-full w-full">
+        <div className="absolute inset-0 z-0 h-full w-full bg-black opacity-50 dark:bg-white" />
+        <div
+          onMouseEnter={() => {
+            setIsHovered(true);
+          }}
+          onMouseLeave={() => {
+            setIsHovered(false);
+          }}
+          className="relative z-20 mx-auto max-w-4xl text-center text-4xl font-bold"
+        >
           {children}
         </div>
       </motion.div>
 
-      <div className="w-full h-full flex items-center justify-center text-slate-200">
+      <div className="flex h-full w-full items-center justify-center">
         {revealText}
       </div>
     </motion.div>
