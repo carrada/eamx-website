@@ -4,7 +4,7 @@ import './App.css'
 function App() {
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center overflow-hidden">
-      <div className="h-[40rem] w-full">
+      <div className="flex h-[40rem] w-full items-center justify-center overflow-hidden">
         <MaskContainer
           revealText={
             <p className="mx-auto max-w-4xl text-center text-4xl font-bold text-slate-800 dark:text-white">
@@ -12,7 +12,7 @@ function App() {
               Descubre todo lo que podemos hacer por ti.
             </p>
           }
-          className="h-[40rem] rounded-md border border-slate-800/50 text-white dark:text-black"
+          className="h-[40rem] rounded-md border text-white dark:text-black"
         >
           Descubre el poder de{" "}
           <span className="text-blue-500">EAMX</span> con soluciones innovadoras y 
