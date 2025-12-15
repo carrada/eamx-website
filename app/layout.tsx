@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
+import { League_Spartan } from "next/font/google";
 import "./globals.css";
+
+const leagueSpartan = League_Spartan({
+  subsets: ["latin"],
+  variable: "--font-league-spartan",
+});
 
 export const metadata: Metadata = {
   title: "EAMX Website",
@@ -13,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className={leagueSpartan.variable}>{children}</body>
     </html>
   );
 }

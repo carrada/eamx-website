@@ -6,3 +6,9 @@
   --white: #ffffff;
   --slate-900: #0f172a;
 }
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-league-spartan), sans-serif;
+  }
+}
