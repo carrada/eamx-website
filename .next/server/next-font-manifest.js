@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/home/carrada/Escritorio/Projects/chiiko-websites/EAMX/app/layout\":[\"static/media/c441a7a257a6e5bf-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

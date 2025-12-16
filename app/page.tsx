@@ -1,5 +1,34 @@
 import { MaskContainer } from "@/components/ui/svg-mask-effect";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+
+const teamMembers = [
+  {
+    id: 1,
+    name: "Arquitecto 1",
+    designation: "Director General",
+    image: "/icon.png",
+  },
+  {
+    id: 2,
+    name: "Ingeniero 1",
+    designation: "Gerente de Proyectos",
+    image: "/icon.png",
+  },
+  {
+    id: 3,
+    name: "Arquitecto 2",
+    designation: "Diseñador Senior",
+    image: "/icon.png",
+  },
+  {
+    id: 4,
+    name: "Ingeniero 2",
+    designation: "Especialista Estructural",
+    image: "/icon.png",
+  },
+];
 
 export default function Home() {
   return (
@@ -169,6 +198,41 @@ export default function Home() {
                 </CardItem>
               </CardBody>
             </CardContainer>
+          </div>
+        </div>
+      </section>
+
+      {/* Sección Quiénes Somos */}
+      <section className="min-h-screen bg-black py-20 px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 
+            className="text-7xl md:text-8xl lg:text-9xl font-bold text-white text-center mb-16"
+            style={{ fontFamily: 'var(--font-league-spartan)' }}
+          >
+            ¿Quiénes somos EAMX?
+          </h2>
+          
+          {/* Equipo con Animated Tooltips */}
+          <div className="grid grid-cols-2 md:flex md:flex-row items-center justify-center gap-4 md:gap-0 mb-20 w-full">
+            <AnimatedTooltip items={teamMembers} />
+          </div>
+
+          {/* Descripción del Estudio */}
+          <div className="max-w-5xl mx-auto mb-16">
+            <TextGenerateEffect
+              words="Estudio Arquitectura MX, somos un despacho integral de arquitectura y construcción con experiencia en restauración de edificios históricos y ejecución de proyectos constructivos innovadores. No solo diseñamos espacios, los materializamos con precisión, respetando el patrimonio arquitectónico y adaptándolo a las necesidades contemporáneas."
+              className="text-2xl md:text-3xl lg:text-4xl text-white text-center"
+              duration={0.8}
+            />
+          </div>
+
+          {/* Equipo Multidisciplinario */}
+          <div className="max-w-5xl mx-auto">
+            <TextGenerateEffect
+              words="Contamos con un equipo multidisciplinario: Arquitectos especializados en restauración, con formación en conservación del patrimonio. Ingenieros civiles y estructurales expertos en soluciones constructivas y reforzamiento de edificaciones. Project Managers que trabajando en metodologías PMP (Project Management Professional), asegurando eficiencia en plazos, costos y calidad."
+              className="text-xl md:text-2xl lg:text-3xl text-gray-300 text-center"
+              duration={0.8}
+            />
           </div>
         </div>
       </section>

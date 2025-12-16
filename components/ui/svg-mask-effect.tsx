@@ -60,7 +60,7 @@ export const MaskContainer = ({
       <motion.div
         className="absolute flex h-full w-full items-center justify-center text-white pointer-events-none [mask-image:url(/mask.svg)] [mask-repeat:no-repeat] [mask-size:40px]"
         style={{
-          backgroundImage: "url(/fondoeamx.jpg)",
+          backgroundImage: "url(/fondoeamxdeff.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
