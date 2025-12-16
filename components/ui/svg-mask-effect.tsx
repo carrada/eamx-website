@@ -9,12 +9,14 @@ export const MaskContainer = ({
   size = 10,
   revealSize = 600,
   className,
+  style,
 }: {
   children?: string | React.ReactNode;
   revealText?: string | React.ReactNode;
   size?: number;
   revealSize?: number;
   className?: string;
+  style?: React.CSSProperties;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState<any>({ x: null, y: null });
@@ -53,6 +55,7 @@ export const MaskContainer = ({
     <motion.div
       ref={containerRef}
       className={cn("relative h-screen", className)}
+      style={style}
     >
       <motion.div
         className="absolute flex h-full w-full items-center justify-center text-white pointer-events-none [mask-image:url(/mask.svg)] [mask-repeat:no-repeat] [mask-size:40px]"
