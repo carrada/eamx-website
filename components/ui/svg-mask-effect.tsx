@@ -22,17 +22,27 @@ export const MaskContainer = ({
   
   const updateMousePosition = (e: any) => {
     const rect = containerRef.current.getBoundingClientRect();
-    setMousePosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Calcular si el mouse está en la zona central (30% superior y 30% inferior excluidos)
+    const heightThreshold = rect.height * 0.25; // 25% de margen arriba y abajo
+    const isInActiveZone = y > heightThreshold && y < rect.height - heightThreshold;
+    
+    setMousePosition({ x, y });
+    setIsHovered(isInActiveZone);
   };
 
   useEffect(() => {
     const container = containerRef.current;
     if (container) {
       container.addEventListener("mousemove", updateMousePosition);
+      container.addEventListener("mouseleave", () => setIsHovered(false));
     }
     return () => {
       if (container) {
         container.removeEventListener("mousemove", updateMousePosition);
+        container.removeEventListener("mouseleave", () => setIsHovered(false));
       }
     };
   }, []);
@@ -43,15 +53,14 @@ export const MaskContainer = ({
     <motion.div
       ref={containerRef}
       className={cn("relative h-screen", className)}
-      animate={{
-        backgroundColor: isHovered ? "var(--slate-900)" : "var(--white)",
-      }}
-      transition={{
-        backgroundColor: { duration: 0.3 },
-      }}
     >
       <motion.div
-        className="absolute flex h-full w-full items-center justify-center bg-black text-6xl text-white [mask-image:url(/mask.svg)] [mask-repeat:no-repeat] [mask-size:40px]"
+        className="absolute flex h-full w-full items-center justify-center text-white pointer-events-none [mask-image:url(/mask.svg)] [mask-repeat:no-repeat] [mask-size:40px]"
+        style={{
+          backgroundImage: "url(/fondoeamx.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
         animate={{
           maskPosition: `${mousePosition.x - maskSize / 2}px ${
             mousePosition.y - maskSize / 2
@@ -63,16 +72,7 @@ export const MaskContainer = ({
           maskPosition: { duration: 0, ease: "linear" },
         }}
       >
-        <div className="absolute inset-0 z-0 h-full w-full bg-black opacity-50" />
-        <div
-          onMouseEnter={() => {
-            setIsHovered(true);
-          }}
-          onMouseLeave={() => {
-            setIsHovered(false);
-          }}
-          className="relative z-20 w-full px-8 text-center text-4xl font-bold text-white"
-        >
+        <div className="relative z-20 w-full px-8 text-center font-bold text-white pointer-events-none">
           {children}
         </div>
       </motion.div>
