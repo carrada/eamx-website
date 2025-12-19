@@ -75,12 +75,12 @@ export const MaskContainer = ({
           maskPosition: { duration: 0, ease: "linear" },
         }}
       >
-        <div className="relative z-20 w-full px-8 text-center font-bold text-white pointer-events-none">
+        <div className="relative z-20 w-full text-center font-bold text-white pointer-events-none">
           {children}
         </div>
       </motion.div>
 
-      <div className="flex h-full w-full items-center justify-center px-8 text-slate-800">
+      <div className="flex h-full w-full items-center justify-center text-slate-800">
         {revealText}
       </div>
     </motion.div>

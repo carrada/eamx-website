@@ -48,26 +48,26 @@ export const AnimatedTooltip = ({
     <>
       {items.map((item, idx) => (
         <div
-          className="group relative flex flex-col items-center mx-4"
+          className="group relative flex flex-col items-center mx-2 md:mx-4"
           key={item.name}
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           {/* Título permanente arriba */}
-          <div className="mb-4 flex flex-col items-center">
-            <div className="text-base font-bold text-white">
+          <div className="mb-3 md:mb-4 flex flex-col items-center">
+            <div className="text-sm md:text-base font-bold text-white text-center">
               {item.name}
             </div>
-            <div className="text-xs text-gray-400">{item.designation}</div>
+            <div className="text-xs text-gray-400 text-center">{item.designation}</div>
           </div>
           
           <img
             onMouseMove={handleMouseMove}
-            height={100}
-            width={100}
+            height={150}
+            width={150}
             src={item.image}
             alt={item.name}
-            className="relative !m-0 h-14 w-14 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105"
+            className="relative !m-0 h-20 w-20 md:h-24 md:w-24 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105"
           />
         </div>
       ))}
