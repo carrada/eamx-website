@@ -8,9 +8,6 @@
 }
 
 @layer base {
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-league-spartan), sans-serif;
-  }
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
@@ -64,23 +61,27 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
-
-
-
-@layer base {
+  
   * {
     @apply border-border;
+    font-family: var(--font-league-spartan), sans-serif;
   }
+  
   body {
     @apply bg-background text-foreground;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    font-family: var(--font-league-spartan), sans-serif;
   }
+  
   html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-league-spartan), sans-serif;
   }
 }

@@ -10,6 +10,9 @@ const leagueSpartan = League_Spartan({
 export const metadata: Metadata = {
   title: "EAMX Website",
   description: "EAMX - Innovación y excelencia",
+  icons: {
+    icon: '/favicon2eamx.png',
+  },
 };
 
 export default function RootLayout({
@@ -19,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={leagueSpartan.variable}>{children}</body>
+      <body className={`${leagueSpartan.variable} ${leagueSpartan.className}`}>{children}</body>
     </html>
   );
 }

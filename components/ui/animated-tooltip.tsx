@@ -54,11 +54,11 @@ export const AnimatedTooltip = ({
           onMouseLeave={() => setHoveredIndex(null)}
         >
           {/* Título permanente arriba */}
-          <div className="mb-3 md:mb-4 flex flex-col items-center">
-            <div className="text-sm md:text-base font-bold text-white text-center">
+          <div className="mb-3 md:mb-4 flex flex-col items-center" style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}>
+            <div className="text-sm md:text-base font-bold text-white text-center" style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}>
               {item.name}
             </div>
-            <div className="text-xs text-gray-400 text-center">{item.designation}</div>
+            <div className="text-xs text-gray-400 text-center" style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}>{item.designation}</div>
           </div>
           
           <img

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { MaskContainer } from "@/components/ui/svg-mask-effect";
@@ -42,7 +43,7 @@ export default function Home() {
       {/* Logo visible desde el inicio */}
       <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-50">
         <img 
-          src="/icon.png" 
+          src="/logo.png" 
           alt="EAMX Logo" 
           className="w-16 h-16 md:w-20 md:h-20 object-contain"
         />
@@ -50,15 +51,15 @@ export default function Home() {
       
       <MaskContainer
         revealText={
-          <p className="w-full text-center text-4xl md:text-6xl font-bold text-slate-800 dark:text-white" style={{ fontFamily: 'var(--font-league-spartan)' }}>
+          <p className="w-full text-center text-4xl md:text-6xl font-bold text-slate-800 dark:text-white" style={{ fontFamily: 'var(--font-league-spartan), sans-serif' }}>
             Arquitectura contemporánea + precisión estructural
 
           </p>
         }
         className="h-screen w-full text-white dark:text-black text-4xl md:text-6xl text-center"
-        style={{ fontFamily: 'var(--font-league-spartan)' }}
+        style={{ fontFamily: 'var(--font-league-spartan), sans-serif' }}
       >
-        <span style={{ fontFamily: 'var(--font-league-spartan)' }}>
+        <span style={{ fontFamily: 'var(--font-league-spartan), sans-serif' }}>
           Diseñamos espacios que combinan estética, funcionalidad y durabilidad.
         </span>
       </MaskContainer>
@@ -213,7 +214,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 
             className="text-7xl md:text-8xl lg:text-9xl font-bold text-white text-center mb-16"
-            style={{ fontFamily: 'var(--font-league-spartan)' }}
+            style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}
           >
             ¿Quiénes somos EAMX?
           </h2>
@@ -225,14 +226,14 @@ export default function Home() {
 
           {/* Descripción del Estudio */}
           <div className="max-w-5xl mx-auto mb-16">
-            <p className="text-2xl md:text-3xl lg:text-4xl text-white text-center font-normal">
+            <p className="text-2xl md:text-3xl lg:text-4xl text-white text-center font-normal" style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}>
               Estudio Arquitectura MX, somos un <span className="font-bold">despacho integral</span> de arquitectura y construcción con experiencia en <span className="font-bold">restauración de edificios históricos</span> y ejecución de <span className="font-bold">proyectos constructivos innovadores</span>. No solo diseñamos espacios, los materializamos con precisión, respetando el <span className="font-bold">patrimonio arquitectónico</span> y adaptándolo a las necesidades contemporáneas.
             </p>
           </div>
 
           {/* Equipo Multidisciplinario */}
           <div className="max-w-5xl mx-auto mb-16">
-            <p className="text-2xl md:text-3xl lg:text-4xl text-white text-center font-normal">
+            <p className="text-2xl md:text-3xl lg:text-4xl text-white text-center font-normal" style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}>
               Contamos con un <span className="font-bold">equipo multidisciplinario</span>: <span className="font-bold">Arquitectos especializados en restauración</span>, con formación en <span className="font-bold">conservación del patrimonio</span>. <span className="font-bold">Ingenieros civiles y estructurales</span> expertos en soluciones constructivas y reforzamiento de edificaciones. <span className="font-bold">Project Managers</span> que trabajando en <span className="font-bold">metodologías PMP</span> (Project Management Professional), asegurando eficiencia en plazos, costos y calidad.
             </p>
           </div>
@@ -241,12 +242,12 @@ export default function Home() {
           <div className="max-w-5xl mx-auto">
             <h3 
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-12"
-              style={{ fontFamily: 'var(--font-league-spartan)' }}
+              style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}
             >
               Metodología y Estándares de Calidad
             </h3>
-            <div className="text-2xl md:text-3xl lg:text-4xl text-white text-center font-normal space-y-6">
-              <div>
+            <div className="text-2xl md:text-3xl lg:text-4xl text-white text-center font-normal space-y-6" style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}>
+              <div style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}>
                 Trabajamos bajo los principios del{" "}
                 <LinkPreview
                   url="https://www.pmi.org/certifications/project-management-pmp"
@@ -256,7 +257,7 @@ export default function Home() {
                 </LinkPreview>
                 , garantizando una gestión estructurada y resultados predecibles.
               </div>
-              <div>
+              <div style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}>
                 Estandarizamos procesos con{" "}
                 <LinkPreview
                   url="https://www.iso.org/iso-9001-quality-management.html"
@@ -266,7 +267,7 @@ export default function Home() {
                 </LinkPreview>
                 , implementando controles en cada fase del proyecto.
               </div>
-              <div>
+              <div style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}>
                 En restauración, seguimos protocolos del INBA para preservar la autenticidad de los inmuebles.
               </div>
             </div>
@@ -276,12 +277,12 @@ export default function Home() {
           <div className="max-w-5xl mx-auto mt-16">
             <h3 
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-12"
-              style={{ fontFamily: 'var(--font-league-spartan)' }}
+              style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}
             >
               Alcance Geográfico
             </h3>
-            <div className="text-2xl md:text-3xl lg:text-4xl text-white text-center font-normal">
-              <div>
+            <div className="text-2xl md:text-3xl lg:text-4xl text-white text-center font-normal" style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}>
+              <div style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}>
                 Ofrecemos nuestros servicios en:{" "}
                 <LinkPreview
                   url="/cdmx.jpeg"
@@ -338,7 +339,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 
             className="text-7xl md:text-8xl lg:text-9xl font-bold mb-16 text-center text-slate-900 dark:text-white"
-            style={{ fontFamily: 'var(--font-league-spartan)' }}
+            style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}
           >
             Galería
           </h2>
@@ -566,14 +567,14 @@ export default function Home() {
           }}
           className="mt-16"
         >
-          <HoverBorderGradient
-            as="a"
-            href="mailto:info@eamx.mx"
-            containerClassName="rounded-full"
-            className="text-white text-lg md:text-xl font-bold px-8 py-4"
-          >
-            Conversemos sobre tu proyecto →
-          </HoverBorderGradient>
+          <a href="mailto:info@eamx.mx">
+            <HoverBorderGradient
+              containerClassName="rounded-full"
+              className="text-white text-lg md:text-xl font-bold px-8 py-4"
+            >
+              Conversemos sobre tu proyecto →
+            </HoverBorderGradient>
+          </a>
         </motion.div>
       </LampContainer>
 
@@ -646,7 +647,7 @@ export default function Home() {
                 © 2025 EAMX. Todos los derechos reservados.
               </p>
               <p className="text-gray-500 text-sm flex items-center gap-2">
-                made by
+                Sitio web hecho y diseñado por
                 <a
                   href="https://chiiko.design"
                   target="_blank"

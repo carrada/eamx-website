@@ -97,9 +97,12 @@ export const LinkPreview = ({
         <HoverCardPrimitive.Trigger
           onMouseMove={handleMouseMove}
           className={cn("text-black dark:text-white", className)}
-          href={url}
+          style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}
+          asChild
         >
-          {children}
+          <a href={url}>
+            {children}
+          </a>
         </HoverCardPrimitive.Trigger>
 
         <HoverCardPrimitive.Content
