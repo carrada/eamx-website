@@ -251,7 +251,7 @@ export default function Home() {
                 Trabajamos bajo los principios del{" "}
                 <LinkPreview
                   url="https://www.pmi.org/certifications/project-management-pmp"
-                  className="font-bold text-white hover:text-gray-300"
+                  className="font-bold text-red-500 hover:text-red-400"
                 >
                   Project Management Professional (PMP)
                 </LinkPreview>
@@ -261,7 +261,7 @@ export default function Home() {
                 Estandarizamos procesos con{" "}
                 <LinkPreview
                   url="https://www.iso.org/iso-9001-quality-management.html"
-                  className="font-bold text-white hover:text-gray-300"
+                  className="font-bold text-red-500 hover:text-red-400"
                 >
                   sistemas de gestión de calidad tipo ISO 9000
                 </LinkPreview>
@@ -290,7 +290,7 @@ export default function Home() {
                   isStatic={true}
                   width={250}
                   height={180}
-                  className="font-bold text-white hover:text-gray-300"
+                  className="font-bold text-red-500 hover:text-red-400"
                 >
                   CDMX
                 </LinkPreview>
@@ -301,7 +301,7 @@ export default function Home() {
                   isStatic={true}
                   width={250}
                   height={180}
-                  className="font-bold text-white hover:text-gray-300"
+                  className="font-bold text-red-500 hover:text-red-400"
                 >
                   Morelos
                 </LinkPreview>
@@ -312,7 +312,7 @@ export default function Home() {
                   isStatic={true}
                   width={250}
                   height={180}
-                  className="font-bold text-white hover:text-gray-300"
+                  className="font-bold text-red-500 hover:text-red-400"
                 >
                   Querétaro
                 </LinkPreview>
@@ -323,7 +323,7 @@ export default function Home() {
                   isStatic={true}
                   width={250}
                   height={180}
-                  className="font-bold text-white hover:text-gray-300"
+                  className="font-bold text-red-500 hover:text-red-400"
                 >
                   Sonora
                 </LinkPreview>
