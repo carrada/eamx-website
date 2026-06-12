@@ -8,6 +8,8 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { LampContainer } from "@/components/ui/lamp";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import DraggableCardDemo from "@/components/draggable-card-demo-2";
+import ServicesDemo from "@/components/services-demo";
 import { motion } from "framer-motion";
 
 const teamMembers = [
@@ -51,17 +53,21 @@ export default function Home() {
       
       <MaskContainer
         revealText={
-          <p className="w-full text-center text-4xl md:text-6xl font-bold text-slate-800 dark:text-white" style={{ fontFamily: 'var(--font-league-spartan), sans-serif' }}>
-            Arquitectura contemporánea + precisión estructural
-
-          </p>
+          <div className="w-full px-4 sm:px-6 lg:px-0 text-center">
+            <p className="mx-auto max-w-3xl text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-extrabold leading-tight sm:leading-snug md:leading-tight text-slate-800 dark:text-white tracking-tight" style={{ fontFamily: 'var(--font-league-spartan), sans-serif' }}>
+              Arquitectura contemporánea + precisión estructural
+            </p>
+            <p className="mx-auto max-w-2xl mt-3 text-base sm:text-lg md:text-xl lg:text-2xl text-slate-700 dark:text-slate-300 font-light leading-relaxed" style={{ fontFamily: 'var(--font-league-spartan), sans-serif' }}>
+              Mueve el cursor o toca cualquier parte de la pantalla para ver el efecto
+            </p>
+          </div>
         }
         className="h-screen w-full text-white dark:text-black text-4xl md:text-6xl text-center"
         style={{ fontFamily: 'var(--font-league-spartan), sans-serif' }}
       >
-        <span style={{ fontFamily: 'var(--font-league-spartan), sans-serif' }}>
+        <p className="mx-auto max-w-3xl mt-6 text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-extrabold leading-tight sm:leading-snug md:leading-tight text-white text-center tracking-tight" style={{ fontFamily: 'var(--font-league-spartan), sans-serif' }}>
           Diseñamos espacios que combinan estética, funcionalidad y durabilidad.
-        </span>
+        </p>
       </MaskContainer>
       
       <section className="w-full py-20 px-8 bg-white dark:bg-slate-900">
@@ -70,142 +76,7 @@ export default function Home() {
             Nuestros servicios
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem
-                  translateZ="50"
-                  className="text-xl font-bold text-neutral-600 dark:text-white"
-                >
-                  Proyecto Ejecutivo
-                </CardItem>
-                <CardItem
-                  as="p"
-                  translateZ="60"
-                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-                >
-                  Proyectos ejecutivos completos con planos, cálculos, permisos, presupuestos y cumplimiento normativo.
-                </CardItem>
-                <CardItem translateZ="100" className="w-full mt-4">
-                  <img
-                    src="/arquitectura-contemporanea.jpg"
-                    height="1000"
-                    width="1000"
-                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto Ejecutivo"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem
-                  translateZ="50"
-                  className="text-xl font-bold text-neutral-600 dark:text-white"
-                >
-                  Construcción
-                </CardItem>
-                <CardItem
-                  as="p"
-                  translateZ="60"
-                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-                >
-                  Soluciones integrales de construcción para proyectos residenciales, comerciales e industriales, bajo estándares PMP®.
-                </CardItem>
-                <CardItem translateZ="100" className="w-full mt-4">
-                  <img
-                    src="/construccion.jpg"
-                    height="1000"
-                    width="1000"
-                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Construcción"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem
-                  translateZ="50"
-                  className="text-xl font-bold text-neutral-600 dark:text-white"
-                >
-                  Restauración de Monumentos
-                </CardItem>
-                <CardItem
-                  as="p"
-                  translateZ="60"
-                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-                >
-                  Restauración y conservación de inmuebles históricos protegidos por el INBA, con técnicas especializadas.
-                </CardItem>
-                <CardItem translateZ="100" className="w-full mt-4">
-                  <img
-                    src="/restauracion-monumentos.jpg"
-                    height="1000"
-                    width="1000"
-                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Restauración de Monumentos"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem
-                  translateZ="50"
-                  className="text-xl font-bold text-neutral-600 dark:text-white"
-                >
-                  Smart Home
-                </CardItem>
-                <CardItem
-                  as="p"
-                  translateZ="60"
-                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-                >
-                  Automatización inteligente para iluminación, seguridad y confort, controlada desde tu smartphone.
-                </CardItem>
-                <CardItem translateZ="100" className="w-full mt-4">
-                  <img
-                    src="/ingenieria-estructural.jpg"
-                    height="1000"
-                    width="1000"
-                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Smart Home"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem
-                  translateZ="50"
-                  className="text-xl font-bold text-neutral-600 dark:text-white"
-                >
-                  Arquitectura Industrial
-                </CardItem>
-                <CardItem
-                  as="p"
-                  translateZ="60"
-                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-                >
-                  Diseño y construcción de espacios industriales eficientes, durables y optimizados en costos.
-                </CardItem>
-                <CardItem translateZ="100" className="w-full mt-4">
-                  <img
-                    src="/arquitectura-industrial.jpg"
-                    height="1000"
-                    width="1000"
-                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Arquitectura Industrial"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-          </div>
+          <ServicesDemo />
         </div>
       </section>
 
@@ -335,209 +206,21 @@ export default function Home() {
       </section>
 
       {/* Galería de Proyectos */}
-      <section className="w-full py-20 px-8 bg-white dark:bg-slate-900">
-        <div className="max-w-7xl mx-auto">
-          <h2 
-            className="text-7xl md:text-8xl lg:text-9xl font-bold mb-16 text-center text-slate-900 dark:text-white"
-            style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}
-          >
-            Galería
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_0249-scaled.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 1"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_0251-768x1024.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 2"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_0252-768x1024.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 3"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_0266-scaled.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 4"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_0276-768x1024.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 5"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_1345-768x1024.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 6"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_2148-768x1024.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 7"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_3675-768x1024.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 8"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_3677-768x576.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 9"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_3678-768x576.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 10"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_3680-768x1024.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 11"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_3690-1-768x576.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 12"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_3692-768x576.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 13"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_7024-768x576.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 14"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/IMG_7335-768x1024.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 15"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-
-            <CardContainer>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 border">
-                <CardItem translateZ="100" className="w-full">
-                  <img
-                    src="/galeria-proyectos-eamx/05d84694-6d39-4713-b1ab-ec4a35e6fb49.jpg"
-                    className="h-80 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="Proyecto EAMX 16"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
+      <section className="w-full bg-white dark:bg-slate-900">
+        <div className="w-full py-16 px-8 bg-white dark:bg-slate-900">
+          <div className="max-w-7xl mx-auto text-center mb-16">
+            <h2 
+              className="text-7xl md:text-8xl lg:text-9xl font-bold mb-6 text-slate-900 dark:text-white"
+              style={{ fontFamily: 'var(--font-league-spartan), sans-serif !important' } as React.CSSProperties}
+            >
+              Galería
+            </h2>
+            <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Arrastra las imágenes con tu mouse para explorar • Mueve el cursor sobre las fotos para ver el efecto 3D
+            </p>
           </div>
         </div>
+        <DraggableCardDemo />
       </section>
 
       {/* Lamp Section */}
@@ -579,7 +262,7 @@ export default function Home() {
       </LampContainer>
 
       {/* Footer Section */}
-      <section className="bg-black py-16 px-8">
+      <section className="bg-black py-16 px-8 -mt-1">
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
           <motion.div
@@ -644,10 +327,12 @@ export default function Home() {
           >
             <div className="flex flex-col items-center gap-4">
               <p className="text-gray-500 text-sm">
-                © 2025 EAMX. Todos los derechos reservados.
+                © 2026 EAMX. Todos los derechos reservados.
               </p>
-              <p className="text-gray-500 text-sm flex items-center gap-2">
-                Sitio web hecho y diseñado por
+              <div className="flex flex-col items-center gap-2">
+                <p className="text-gray-500 text-sm">
+                  Sitio web hecho y diseñado por
+                </p>
                 <a
                   href="https://chiiko.design"
                   target="_blank"
@@ -657,10 +342,10 @@ export default function Home() {
                   <img
                     src="/chiiko-fondoNegro.png"
                     alt="Chiiko"
-                    className="h-8 w-auto"
+                    className="h-12 w-auto md:h-16"
                   />
                 </a>
-              </p>
+              </div>
             </div>
           </motion.div>
         </div>
